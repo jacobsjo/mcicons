@@ -1,4 +1,5 @@
 
+rm -r icons/
 npm i
 npm run createIcons
 git add -f icons/

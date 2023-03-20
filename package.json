@@ -1,0 +1,20 @@
+{
+  "name": "mc-item-images",
+  "private": "true",
+  "author": {
+    "name": "jacobsjo"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "deepslate": "^0.17.4",
+    "gl": "^6.0.2",
+    "jimp": "^0.22.7"
+  },
+  "devDependencies": {
+    "@types/gl": "^6.0.2"
+  },
+  "type": "module",
+  "scripts": {
+    "createIcons": "node src/createItemIcons.js"
+  }
+}

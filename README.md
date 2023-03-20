@@ -1,2 +1,2 @@
 
-# Typescript module
+# MCIcons

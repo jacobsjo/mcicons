@@ -1,7 +1,6 @@
 import { BlockDefinition, BlockModel, Identifier, ItemRenderer, TextureAtlas, upperPowerOfTwo } from "deepslate";
 import createContext from "gl";
 
-import '@loaders.gl/polyfills'
 import Jimp from "jimp";
 
 const MCMETA = 'https://raw.githubusercontent.com/misode/mcmeta/'

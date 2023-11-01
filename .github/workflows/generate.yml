@@ -3,6 +3,9 @@ name: 'Generate Item Icons'
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -11,11 +14,19 @@ jobs:
       - name: 'Git checkout'
         uses: actions/checkout@v2
 
+      - name: Setup OpenGL
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mesa-utils xvfb
+          Xvfb :1 -screen 0 1024x768x24 </dev/null &
+
       - name: 'Install dependencies'
         run: npm install
 
       - name: 'Generate icons'
-        run: npm run createIcons
+        run: |
+          export DISPLAY=":1"
+          npm run createIcons
 
       - name: 'Push to icons branch'
         uses: s0/git-publish-subdir-action@v2.6.0

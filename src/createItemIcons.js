@@ -8,7 +8,6 @@ const MCMETA = 'https://raw.githubusercontent.com/misode/mcmeta/'
 const IMAGE_SIZE = 128
 
 const itemGl = createContext(IMAGE_SIZE, IMAGE_SIZE)
-console.log(itemGl)
 const itemRenderer = await initalize(itemGl)
 
 async function initalize(itemGl) {

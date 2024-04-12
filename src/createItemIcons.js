@@ -34,12 +34,11 @@ async function initalize(itemGl) {
     const atlasSize = upperPowerOfTwo(Math.max(atlas.bitmap.width, atlas.bitmap.height))
     atlas.contain(atlasSize, atlasSize, Jimp.VERTICAL_ALIGN_TOP | Jimp.HORIZONTAL_ALIGN_LEFT)
 
-    const part = 16 / atlasSize
     const idMap = {}
     Object.keys(uvMap).forEach(id => {
-        const u = uvMap[id][0] / atlasSize
-        const v = uvMap[id][1] / atlasSize
-        idMap['minecraft:' + id] = [u, v, u + part, v + part]
+        const [u, v, du, dv] = uvMap[id]
+        const dv2 = (du !== dv && id.startsWith('block/')) ? du : dv
+        idMap['minecraft:' + id] = [u / atlasSize, v / atlasSize, (u + du) / atlasSize, (v + dv) / atlasSize]
     })
     const textureAtlas = new TextureAtlas(atlas.bitmap, idMap)
 

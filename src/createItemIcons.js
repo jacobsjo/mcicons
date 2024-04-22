@@ -38,7 +38,7 @@ async function initalize(itemGl) {
     Object.keys(uvMap).forEach(id => {
         const [u, v, du, dv] = uvMap[id]
         const dv2 = (du !== dv && id.startsWith('block/')) ? du : dv
-        idMap['minecraft:' + id] = [u / atlasSize, v / atlasSize, (u + du) / atlasSize, (v + dv) / atlasSize]
+        idMap['minecraft:' + id] = [u / atlasSize, v / atlasSize, (u + du) / atlasSize, (v + dv2) / atlasSize]
     })
     const textureAtlas = new TextureAtlas(atlas.bitmap, idMap)
 

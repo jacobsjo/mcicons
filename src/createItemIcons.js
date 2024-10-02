@@ -18,12 +18,12 @@ async function initalize(itemGl) {
     ])
     const blockDefinitions = {}
     Object.keys(blockstates).forEach(id => {
-        blockDefinitions['minecraft:' + id] = BlockDefinition.fromJson(id, blockstates[id])
+        blockDefinitions['minecraft:' + id] = BlockDefinition.fromJson(blockstates[id])
     })
 
     const blockModels = {}
     Object.keys(models).forEach(id => {
-        blockModels['minecraft:' + id] = BlockModel.fromJson(id, models[id])
+        blockModels['minecraft:' + id] = BlockModel.fromJson(models[id])
     })
     Object.values(blockModels).forEach((m) => m.flatten({ getBlockModel: (id) => blockModels[id] }))
 

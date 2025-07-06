@@ -62,6 +62,7 @@ async function initalize(itemGl) {
         getBlockModel(id) { return blockModels[id.toString()] },
         getTextureUV(id) { return textureAtlas.getTextureUV(id) },
         getTextureAtlas() { return textureAtlas.getTextureAtlas() },
+        getPixelSize() { return textureAtlas.getPixelSize() },
         getBlockFlags(id) { return { opaque: false } },
         getBlockProperties(id) { return null },
         getDefaultBlockProperties(id) { return null },

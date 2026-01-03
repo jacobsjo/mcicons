@@ -6,7 +6,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "deepslate": "^0.24.0",
+    "deepslate": "^0.25.1",
     "gl": "^8.0.2",
     "jimp": "^0.22.7"
   },
